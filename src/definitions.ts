@@ -1,3 +1,6 @@
-export interface CameraFocusPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+import { Plugin } from '@capacitor/core';
+
+export interface CameraFocusPlugin extends Plugin {
+  focusAtPoint(options: { x: number; y: number }): Promise<void>;
 }
+

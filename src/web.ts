@@ -1,10 +1,12 @@
 import { WebPlugin } from '@capacitor/core';
-
-import type { CameraFocusPlugin } from './definitions';
+import { CameraFocusPlugin } from './definitions';
 
 export class CameraFocusWeb extends WebPlugin implements CameraFocusPlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  async focusAtPoint(_options: { x: number; y: number }): Promise<void> {
+    console.warn('CameraFocus is not available on the web.');
   }
 }
+
+const CameraFocus = new CameraFocusWeb();
+export { CameraFocus };
+

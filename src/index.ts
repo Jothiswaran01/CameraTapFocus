@@ -8,3 +8,4 @@ const CameraFocus = registerPlugin<CameraFocusPlugin>('CameraFocus', {
 
 export * from './definitions';
 export { CameraFocus };
+
